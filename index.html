@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fieldnotes – Photo Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Fieldnotes</h1>
+    <p class="intro">Fourteen photographs from forests, streets, wildlife and buildings. Pick a category, then open any photo to browse full size.</p>
+  </header>
+
+  <nav class="filters" aria-label="Filter photos by category">
+    <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter" data-filter="nature" aria-pressed="false">Nature</button>
+    <button class="filter" data-filter="city" aria-pressed="false">City</button>
+    <button class="filter" data-filter="animals" aria-pressed="false">Animals</button>
+    <button class="filter" data-filter="architecture" aria-pressed="false">Architecture</button>
+    <span class="count" id="count" aria-live="polite"></span>
+  </nav>
+
+  <main>
+    <section class="gallery" id="gallery" aria-label="Photo gallery"></section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close viewer">&times;</button>
+    <button class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+    <button class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Next photo">&#8250;</button>
+
+    <figure class="lb-figure">
+      <img id="lbImg" alt="">
+      <figcaption>
+        <span id="lbCaption"></span>
+        <span id="lbCounter" class="lb-counter"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
